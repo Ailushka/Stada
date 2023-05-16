@@ -611,19 +611,24 @@ html:has(.popup_opened) {
 
 .expert {
   background: #EAEAEA;
-  border-radius: 0px 0px 12px 12px;
+  border-radius: 12px;
+  width: calc(100% / 3 - 4px);
 }
 
 .expert__photo-container {
+  width: 100%;
   height: 279px;
   overflow: hidden;
   border-radius: 12px 12px 0 0;
+  aspect-ratio: 356 / 279;
 }
 
 .expert__photo {
   display: block;
   object-fit: cover;
   object-position: center;
+  width: 100%;
+  height: 100%;
 }
 
 .expert__description {
