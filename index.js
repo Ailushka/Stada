@@ -83,39 +83,89 @@ closeButtons.forEach((item) => {
 /*    Carousel slider   */
 /* -------------------- */
 
-document.querySelectorAll('.slide-arrow_next').forEach((item) => {
-  item.addEventListener('click', (evt) => {
-    const slidesContainer = evt.target.parentNode.parentNode.querySelector('.slides-container');
-    const slide = slidesContainer.querySelector(".slide");
+const initSlider = (slider) => {
+  const sliderContainer = slider.querySelector('.slider__container');
+  const sliderItems = slider.querySelectorAll('.slider__item');
+  const next = slider.querySelector('.slide-arrow_next');
+  const prev = slider.querySelector('.slide-arrow_prev');
+  const slideGap = parseInt(getComputedStyle(sliderContainer).gap, 10);
+  let currentSlide = 0;
 
-    const slideWidth = slide.offsetWidth;
-    const slidesGap = parseInt(getComputedStyle(slidesContainer).gap, 10);
+  sliderItems[currentSlide].classList.add("activeSlide");
 
-    slidesContainer.scrollLeft += (slideWidth + slidesGap);
+  let itemWidth = sliderItems[0].clientWidth;
 
-    if (slidesContainer.scrollLeft >= (slidesContainer.scrollWidth - slidesContainer.offsetWidth - (slideWidth + slidesGap))) {
-      item.classList.remove('slide-arrow_active');
+  const sliderItemsToShow = Math.floor(sliderContainer.clientWidth / itemWidth);
+
+  let resizeTimer;
+
+  function handleResize() {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function() {
+    currentSlide = 0;
+    sliderContainer.style.transform = "translateY(0px)";
+    prev.classList.add("slide-arrow_disabled");
+    next.classList.remove("slide-arrow_disabled");
+    itemWidth = sliderItems[0].clientWidth;
+  }, 200);
+}
+
+  sliderContainer.style.transform = "translateY(0px)";
+
+  const toggleClass = (condition, elem, className) => {
+    condition
+      ? elem.classList.add(className)
+      : elem.classList.remove(className);
+  };
+
+  const handlePrevNextBtn = () => {
+    toggleClass(currentSlide === 0, prev, "slide-arrow_disabled");
+    toggleClass(currentSlide === sliderItems.length - sliderItemsToShow, next, "slide-arrow_disabled");
+  };
+
+  handlePrevNextBtn();
+
+  const handleSlide = (condition, slideElem, event) => {
+    const slideTransformValue = slideElem.style.transform;
+    const translateXValue = slideTransformValue.replace(/[^\d.]/g, "");
+
+    if (condition && event === "next") {
+      currentSlide += 1;
+
+      slideElem.style.transform = `translateX(-${
+        +translateXValue + itemWidth + slideGap
+      }px)`;
+    } else if (condition && event === "prev") {
+      currentSlide -= 1;
+
+      slideElem.style.transform = `translateX(-${
+        +translateXValue - itemWidth - slideGap
+      }px)`;
     }
+    sliderItems.forEach((e) => e.classList.remove("activeSlide"));
+    sliderItems[currentSlide].classList.add("activeSlide");
+  };
 
-      item.previousElementSibling.classList.add('slide-arrow_active');
-  })
-})
+  const handleNextClick = () => {
+    handleSlide(currentSlide !== sliderItems.length - sliderItemsToShow, sliderContainer, "next");
+    handlePrevNextBtn();
+  };
 
-document.querySelectorAll('.slide-arrow_prev').forEach((item) => {
-  item.addEventListener('click', (evt) => {
-    item.nextElementSibling.classList.add('slide-arrow_active');
-    const slidesContainer = evt.target.parentNode.parentNode.querySelector('.slides-container');
-    const slide = slidesContainer.querySelector(".slide");
+  const handlePrevClick = () => {
+    handleSlide(currentSlide !== 0, sliderContainer, "prev");
+    handlePrevNextBtn();
+  };
 
-    const slideWidth = slide.offsetWidth;
-    const slidesGap = parseInt(getComputedStyle(slidesContainer).gap, 10);
-    slidesContainer.scrollLeft -= (slideWidth + slidesGap);
+  next.addEventListener("click", handleNextClick);
+  prev.addEventListener("click", handlePrevClick);
 
-    if (slidesContainer.scrollLeft < (slideWidth + slidesGap)) {
-      item.classList.remove('slide-arrow_active');
-    }
-  })
-})
+  window.addEventListener('resize', handleResize);
+};
+
+const sliders = document.querySelectorAll('.slider');
+
+sliders.forEach(slider => initSlider(slider));
+
 
 /* -------------------- */
 /*       Accordeon      */
