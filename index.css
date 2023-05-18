@@ -986,10 +986,11 @@ html:has(.popup_opened) {
   }
   .experts__title {
     margin-bottom: 12px;
+    max-width: 95%;
   }
   .experts__subtitle {
     margin-bottom: 16px;
-    max-width: 100%;
+    max-width: 95%;
     line-height: 110%;
   }
   .expert {
