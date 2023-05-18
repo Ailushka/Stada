@@ -968,9 +968,11 @@ html:has(.popup_opened) {
   }
   .experts__title {
     margin-bottom: 16px;
+    padding-right: calc(38.4/768 * 100%);
   }
   .experts__subtitle {
     margin-bottom: 22px;
+    padding-right: calc(38.4/768 * 100%);
   }
   .expert {
     width: auto;
@@ -987,11 +989,13 @@ html:has(.popup_opened) {
   .experts__title {
     margin-bottom: 12px;
     max-width: 95%;
+    padding-right: calc(13.5/540 * 100%);
   }
   .experts__subtitle {
     margin-bottom: 16px;
     max-width: 95%;
     line-height: 110%;
+    padding-right: calc(13.5/540 * 100%);
   }
   .expert {
     border-radius: 5px;
@@ -1276,6 +1280,10 @@ html:has(.popup_opened) {
   .question__title {
     padding-right: 24px;
   }
+  .question__text {
+    padding-right: 24px;
+  }
+
   .question:has(.accordeon__title_active) .question__content {
     padding-top: 8px;
   }
@@ -1286,7 +1294,6 @@ html:has(.popup_opened) {
     padding: 20px 12px 21px 12px;
   }
   .question__text {
-    padding-right: 18px;
     padding-top: 0;
     line-height: 120%;
   }
