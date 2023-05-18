@@ -21,16 +21,20 @@
       <section class="offer">
         <div class="offer__content container section">
           <div class="offer__info">
-            <h1 class="offer__title site-title">Потренируйтесь проходить собеседования с Яндекс Практикумом</h1>
-            <p class="offer__subtitle section-subtitle">Запишитесь на тренировочное собеседование, чтобы чувствовать себя уверенно на реальном и&nbsp;успешно его пройти</p>
+            <h1 class="offer__title site-title">Потренируйтесь проходить собеседования с&nbsp;Яндекс&nbsp;Практикумом</h1>
+            <p class="offer__subtitle section-subtitle">Запишитесь на тренировочное собеседование, чтобы&nbsp;чувствовать себя уверенно на реальном и&nbsp;успешно его пройти</p>
             <button class="button button_type_main offer__button button-text button_type_request" type="button">Записаться на собеседование</button>
           </div>
-          <img class="offer__image" src="./images/main-illustration.png" alt="Главная иллюстрация">
+          <picture class="offer__image-container">
+            <source srcset="./images/main-illustration_mobile.png" media="(max-width: 540px)">
+            <source srcset="./images/main-illustration.png">
+            <img class="offer__image" src="./images/main-illustration.png" alt="Главная иллюстрация">
+          </picture>
         </div>
       </section>
       <section class="problems">
         <div class="problems__content container section">
-          <h2 class="problems__title section-title">Мы знаем, как справиться с&nbsp;трудностями</h2>
+          <h2 class="problems__title section-title">Мы знаем, как&nbsp;справиться с&nbsp;трудностями</h2>
           <ul class="problems__list list">
             <li class="problem problem_type_presentation">
               <p class="problem__text section-text">Не умею продавать себя как специалиста, хотя опыт есть</p>
@@ -39,7 +43,7 @@
               <p class="problem__text section-text">Хочу понять, чего ждать от собеседования в конкретную компанию</p>
             </li>
             <li class="problem problem_type_fail">
-              <p class="problem__text section-text">Не понимаю, почему после собеседования не получаю офер</p>
+              <p class="problem__text section-text">Не понимаю, почему после собеседования не получаю оффер</p>
             </li>
             <li class="problem problem_type_questions">
               <p class="problem__text section-text">Хочу узнать, как правильно отвечать на вопросы об опыте и достижениях</p>
@@ -48,38 +52,38 @@
               <p class="problem__text section-text">Боюсь, что моих навыков не хватает</p>
             </li>
             <li class="problem problem_type_requirements">
-              <p class="problem__text section-text">Не понимаю, какие требования в другой сфере</p>
+              <p class="problem__text section-text">Не понимаю, какие требования в&nbsp;другой сфере</p>
             </li>
           </ul>
         </div>
       </section>
       <section class="features">
         <div class="features__content container section">
-          <h2 class="features__title section-title">Научим проходить собеседования так, чтобы вы получили офер</h2>
+          <h2 class="features__title section-title">Научим проходить собеседования так, чтобы вы получили оффер</h2>
           <ul class="features__list list">
 
             <li class="feature feature_type_interview">
               <img class="feature__image" src="./images/interview-illustration.jpg" alt="Прохождение мок-интервью">
               <div class="feature__content">
-                <h3 class="feauture__title item-title">Проведём реальное собеседование и проработаем ответы</h3>
+                <h3 class="feature__title item-title">Проработаем ваши ответы в среде, приближённой к реальности</h3>
                 <p class="feature__text item-text">Знать теорию важно, но ещё важнее — уметь применять её на практике. Вместе с экспертом разберёте кейсы и задачи с реальных собеседований и потренируетесь отвечать на вопросы.</p>
 
               </div>
             </li>
 
             <li class="feature feature_type_feedback">
-              <h3 class="feauture__title item-title">Дадим обратную связь</h3>
+              <h3 class="feature__title item-title">Дадим обратную связь</h3>
               <p class="feature__text item-text">Эксперт проанализирует ваши ответы, даст честную и подробную обратную связь и поделится практическими рекомендациями.</p>
               <p class="feature__text item-text">Сможете усилить самопрезентацию: поймёте, как структурировать ваш рассказ, выделить важное и сделать акцент на нужных деталях.</p>
             </li>
             <li class="feature feature_type_assessment">
-              <h3 class="feauture__title item-title">Расскажем, что&nbsp;оценивают работодатели</h3>
-              <p class="feauture__subtitle card-title">&rarr; в России и за рубежом</p>
+              <h3 class="feature__title item-title">Расскажем, что&nbsp;оценивают работодатели</h3>
+              <p class="feature__subtitle card-title">&rarr; в России и за рубежом</p>
               <p class="feature__text item-text">Эксперты Яндекса — действующие специалисты с большим опытом. Они постоянно следят за обновлениями на рынке.</p>
               <p class="feature__text item-text">Узнаете, как преподнести ваши навыки для конкретного направления или компании, и поймёте, верны ли ваши ожидания.</p>
             </li>
             <li class="feature feature_type_time">
-              <h3 class="feauture__title item-title">Сэкономим ваше время</h3>
+              <h3 class="feature__title item-title">Сэкономим ваше время</h3>
               <p class="feature__text item-text">1,5 часа тренировочного собеседования заменят несколько часов или дней подготовки.</p>
               <p class="feature__text item-text">Эксперт поделится нужными лекциями, конференциями, видео и статьями по теме — вам не придётся искать всё самостоятельно.</p>
             </li>
@@ -222,6 +226,11 @@
 
       </section>
       <section class="price">
+        <picture class="price__background-image">
+          <source srcset="./images/bg_price_mobile.png" media="(max-width: 992px)">
+          <source srcset="./images/bg_price.png">
+          <img class="price__image" src="./images/bg_price.png" alt="Ася Ермолаева на бейдже">
+        </picture>
         <div class="price__content container section">
           <h2 class="price__title section-title">Стоимость 4 500 &#8381;</h2>
           <ul class="price__list list">
@@ -235,7 +244,7 @@
               <p class="price-info__text item-text">сопровождение в чате</p>
             </li>
             <li class="price-info">
-              <p class="price-info__text item-text">помощь эксперта с дополнительными вопросами: 1 неделя</p>
+              <p class="price-info__text item-text">помощь эксперта с дополнительными вопросами: в течение 1 недели</p>
             </li>
           </ul>
           <button class="button button_type_secondary price__button button-text button_type_request" type="button">Записаться на собеседование</button>
@@ -305,7 +314,7 @@
             <li class="question">
               <button class="question__title accordeon__title card-title button">Как выглядит работа с экспертом?</button>
               <div class="question__content accordeon__content">
-                <p class="question__text item-text">Это индивидуальная встреча в Zoom, на которой присутствуете только вы и эксперт. Эксперт сыграет роль нанимающего менеджера и задаст вопросы о вашем опыте работы, навыках и достижениях. После этого вы получите подробную обратную связь и рекомендации, что можно улучшить.</p>
+                <p class="question__text item-text">Это индивидуальная встреча в Zoom, на которой присутствуете только вы и эксперт. Эксперт сыграет роль нанимающего менеджера и задаст вопросы о вашем опыте работы, навыках и достижениях. После этого вы получите подробную обратную связь и рекомендации, что можно улучшить.</p>
               </div>
             </li>
             <li class="question">

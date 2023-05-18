@@ -96,6 +96,7 @@ const initSlider = (slider) => {
   let itemWidth = sliderItems[0].clientWidth;
 
   const sliderItemsToShow = Math.floor(sliderContainer.clientWidth / itemWidth);
+  // const scrollWidth = Math.round((sliderContainer.scrollWidth - sliderContainer.clientWidth) / Math.round(((sliderContainer.scrollWidth - sliderContainer.clientWidth) / (itemWidth + slideGap))));
 
   let resizeTimer;
 
@@ -107,6 +108,8 @@ const initSlider = (slider) => {
     prev.classList.add("slide-arrow_disabled");
     next.classList.remove("slide-arrow_disabled");
     itemWidth = sliderItems[0].clientWidth;
+    const scrollWidthNext = itemWidth + slideGap;
+
   }, 200);
 }
 
@@ -159,13 +162,12 @@ const initSlider = (slider) => {
   next.addEventListener("click", handleNextClick);
   prev.addEventListener("click", handlePrevClick);
 
-  window.addEventListener('resize', handleResize);
+  // window.addEventListener('resize', handleResize);
 };
 
 const sliders = document.querySelectorAll('.slider');
 
 sliders.forEach(slider => initSlider(slider));
-
 
 /* -------------------- */
 /*       Accordeon      */
