@@ -1256,8 +1256,8 @@ html:has(.popup_opened) {
   color: var(--clr-text-primary);
 }
 
-.question:has(.accordeon__title_active) .question__title {
-  padding-bottom: 12px;
+.question:has(.accordeon__title_active) .question__content {
+  padding-top: 12px;
 }
 
 .question__text {
@@ -1276,8 +1276,8 @@ html:has(.popup_opened) {
   .question__title {
     padding-right: 24px;
   }
-  .question:has(.accordeon__title_active) .question__title {
-    padding-bottom: 8px;
+  .question:has(.accordeon__title_active) .question__content {
+    padding-top: 8px;
   }
 }
 
@@ -1328,7 +1328,7 @@ html:has(.popup_opened) {
 .accordeon__content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height .3s ease-in-out;
+  transition: max-height .5s ease-in-out, padding-top .5s ease-in-out ;
 }
 
 @media (max-width: 1280px) {
