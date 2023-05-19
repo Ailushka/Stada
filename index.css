@@ -1053,6 +1053,10 @@ html:has(.popup_opened) {
   padding-left: 10px;
 }
 
+.price__button {
+  position: relative;
+}
+
 @media (max-width: 1280px) {
   .price__background-image {
     right: calc(64/1280 * 100%);
