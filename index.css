@@ -160,7 +160,7 @@ html:has(.popup_opened) {
     font-size: 40px;
   }
   .site-subtitle {
-    font-size: 36px;
+    font-size: 26px;
   }
   .section-title {
     font-size: 37px;
@@ -495,7 +495,7 @@ from {opacity: 0;} to {opacity: 1;}
 
 @media (max-width: 1280px) {
   .offer__site-subtitle {
-    min-height: 118.78px;
+    min-height: 57.19px;
   }
 }
 
