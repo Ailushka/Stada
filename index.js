@@ -1,4 +1,38 @@
 /* -------------------- */
+/*   Heading-subtitle   */
+/* -------------------- */
+
+const siteSubtitleElement = document.querySelector('.site-subtitle');
+
+const siteSubtitles = [
+  '→ которое заметят работодатели',
+  '&rarr; которое выделит вас среди других кандидатов',
+  '&rarr; после которого вас позовут на собеседование',
+  '&rarr; которое не затеряется среди десятков других',
+  '&rarr; которое поможет дойти до собеседования',
+  '&rarr; которое выгодно опишет ваш опыт, навыки и достижения'
+];
+
+let currentSubtitleIndex = 0;
+
+function renderCurrentSubtitle() {
+  siteSubtitleElement.innerHTML = siteSubtitles[currentSubtitleIndex];
+  siteSubtitleElement.classList.add('offer__site-subtitle_active');
+
+  setTimeout(() => {
+    siteSubtitleElement.classList.remove('offer__site-subtitle_active');
+  }, 4400);
+  currentSubtitleIndex = (currentSubtitleIndex + 1) % siteSubtitles.length;
+}
+
+renderCurrentSubtitle(); // Показываем первый элемент сразу
+
+setInterval(() => {
+  renderCurrentSubtitle();
+}, 5000);
+
+
+/* -------------------- */
 /*         Popup        */
 /* -------------------- */
 
@@ -173,16 +207,16 @@ sliders.forEach(slider => initSlider(slider));
 /*       Accordeon      */
 /* -------------------- */
 
-document.querySelectorAll('.accordeon__title').forEach((item) => {
+document.querySelectorAll('.accordeon__button').forEach((item) => {
   item.addEventListener('click', (evt) => {
-    const content = evt.target.parentNode.querySelector('.accordeon__content');
+    const content = item.querySelector('.accordeon__content');
 
-    if (!item.classList.contains('accordeon__title_active'))
+    if (!item.classList.contains('accordeon__button_active'))
     {
-      item.classList.add('accordeon__title_active');
+      item.classList.add('accordeon__button_active');
       content.style.maxHeight = content.scrollHeight + 'px';
     } else {
-      item.classList.remove('accordeon__title_active');
+      item.classList.remove('accordeon__button_active');
       content.style.maxHeight = '';
     }
   })
