@@ -226,7 +226,7 @@
           <ul class="price__tablist list" role="tablist" aria-label="tablist-1">
             <li class="price__tab">
               <button
-                class="button price__tab-button"
+                class="button price__tab-button price__tab-button_theme_light"
                 id="tab-1"
                 type="button"
                 role="tab"
@@ -238,7 +238,7 @@
             </li>
             <li class="price__tab">
               <button
-                class="button price__tab-button"
+                class="button price__tab-button price__tab-button_theme_dark"
                 id="tab-2"
                 type="button"
                 role="tab"
@@ -250,14 +250,9 @@
               </button>
             </li>
           </ul>
-          <div class="price__tabpanel tabpanel" id="tabpanel-1" role="tabpanel" aria-labelledby="tab-1">
-            <h3 class="price__title section-title">Стоимость 4 500 &#8381;</h3>
-            <ul class="price__tabpanel-content">
-
-            </ul>
-          </div>
-          <div class="price__tabpanel tabpanel hidden" id="tabpanel-2" role="tabpanel" aria-labelledby="tab-2">
-            <ul class="price__tabpanel-content">
+          <div class="price__tabpanel tabpanel tabpanel_active" id="tabpanel-1" role="tabpanel" aria-labelledby="tab-1">
+            <h3 class="price__tabpanel-title section-title">Стоимость 4 500 &#8381;</h3>
+            <ul class="price__tabpanel-content list">
               <li class="price-info">
                 <p class="price-info__text item-text">предварительный анализ вашего опыта</p>
               </li>
@@ -275,6 +270,31 @@
               </li>
             </ul>
             <button class="button button_type_main button_theme_light price__button button-text button_type_request" type="button">Оставить заявку</button>
+            <picture class="price__background-image">
+              <source srcset="./images/bg_price_mobile.png" media="(max-width: 992px)">
+              <source srcset="./images/bg_price_rate_optimum.png">
+              <img class="price__image" src="./images/bg_price_rate_optimum.png" alt="Резюме и сопроводительное письмо с экспертом">
+            </picture>
+          </div>
+          <div class="price__tabpanel price__tabpanel_theme_dark tabpanel" id="tabpanel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+            <h3 class="price__tabpanel-title section-title">Стоимость 5 500 &#8381;</h3>
+            <ul class="price__tabpanel-content list">
+              <li class="price-info">
+                <p class="price-info__text item-text">вы рассказываете о своём опыте и желаемой позиции</p>
+              </li>
+              <li class="price-info">
+                <p class="price-info__text item-text">мы отравляем вам готовое резюме и сопроводительное письмо — через 2–5 дней</p>
+              </li>
+              <li class="price-info">
+                <p class="price-info__text item-text">сопровождаем в чате и отвечаем на вопросы — в течение 1 недели</p>
+              </li>
+            </ul>
+            <button class="button button_type_main button_theme_light price__button button-text button_type_request" type="button">Оставить заявку</button>
+            <picture class="price__background-image">
+              <source srcset="./images/bg_price_mobile.png" media="(max-width: 992px)">
+              <source srcset="./images/bg_price_rate_vip.png">
+              <img class="price__image" src="./images/bg_price_rate_vip.png" alt="Резюме «под ключ»">
+            </picture>
           </div>
         </div>
 
