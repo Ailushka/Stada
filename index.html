@@ -86,26 +86,90 @@
       </section>
       <section class="process">
         <div class="process__content container section">
-          <h2 class="process__title section-title">Как это работает?</h2>
-          <ol class="process__list list steps">
-            <li class="step">
-              <h3 class="step__title item-title">Уточняем ваши цели</h3>
-              <p class="step__text item-text">До встречи с экспертом разбираем, что хотите потренировать, какую компанию или сферу рассматриваете — мы подбираем эксперта</p>
+          <h2 class="process__title section-title">Как проходит подготовка</h2>
+          <ul class="rate-tablist process__tablist list" role="tablist" aria-label="tablist-1">
+            <li class="rate-tablist__tab">
+              <button
+                class="button rate-tablist__button"
+                id="tab-1"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="tabpanel-1"
+              >
+                Резюме с экспертом
+              </button>
             </li>
-            <li class="step">
-              <h3 class="step__title item-title">Участвуете в интервью</h3>
-              <p class="step__text item-text">Как на реальном собеседовании: отвечаете на вопросы, прорабатываете кейсы, решаете задачи</p>
+            <li class="rate-tablist__tab">
+              <button
+                class="button rate-tablist__button"
+                id="tab-2"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="tabpanel-2"
+                tabindex="-1"
+              >
+                Резюме «под ключ»
+              </button>
             </li>
-            <li class="step">
-              <h3 class="step__title item-title">Разбираем ответы</h3>
-              <p class="step__text item-text">Эксперт даёт обратную связь: что можно прокачать, где есть потенциал, какие есть пробелы</p>
-            </li>
-            <li class="step">
-              <h3 class="step__title item-title">Получаете рекомендации эксперта в чате</h3>
-              <p class="step__text item-text">Общие рекомендации, ссылки на литературу, курсы и конференции</p>
-            </li>
-          </ol>
-          <button class="button button_type_main process__button button-text button_type_request" type="button">Оставить заявку</button>
+          </ul>
+          <div class="process__tabpanel tabpanel tabpanel_active" id="tabpanel-1" role="tabpanel" aria-labelledby="tab-1">
+            <ul class="process__list process__list_type_general list steps">
+              <li class="step step_type_general">
+                <h3 class="step__title card-title">Сколько у вас займёт времени:</h3>
+                <p class="step__text item-title">Около 3 часов</p>
+              </li>
+              <li class="step step_type_general">
+                <img class="step__image" src="./images/process_rate_optimum.jpg" alt="Резюме с экспертом">
+              </li>
+            </ul>
+            <ol class="process__list list steps">
+              <li class="step">
+                <h3 class="step__title item-title">Разбираете резюме и&nbsp;сопроводительное письмо</h3>
+                <p class="step__text item-text">Встречаетесь с экспертом, рассказываете о ваших целях и опыте, обсуждаете текущие версии резюме и письма</p>
+              </li>
+              <li class="step">
+                <h3 class="step__title item-title">Намечаете план действий</h3>
+                <p class="step__text item-text">Что останется сделать, чтобы доработать резюме и сопроводительное</p>
+              </li>
+              <li class="step">
+                <h3 class="step__title item-title">Получаете рекомендации эксперта в чате</h3>
+                <p class="step__text item-text">Общие рекомендации, тезисы, дополнительные ссылки</p>
+              </li>
+              <li class="step">
+                <h3 class="step__title item-title">Дорабатываете по&nbsp;рекомендациям эксперта</h3>
+                <p class="step__text item-text">В течение недели вносите изменения и задаёте вопросы в чате. Эксперт проверяет результаты и делится советами, что можно улучшить.</p>
+              </li>
+            </ol>
+            <button class="button button_type_main process__button button-text button_type_request" type="button">Оставить заявку</button>
+          </div>
+          <div class="process__tabpanel tabpanel" id="tabpanel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+            <ul class="process__list process__list_type_general list steps">
+              <li class="step step_type_general">
+                <h3 class="step__title card-title">Сколько у вас займёт времени:</h3>
+                <p class="step__text item-title">Около 30 минут</p>
+              </li>
+              <li class="step step_type_general">
+                <img class="step__image" src="./images/process_rate_vip.jpg" alt="Резюме «под ключ»">
+              </li>
+            </ul>
+            <ol class="process__list list steps steps_rate_vip">
+              <li class="step">
+                <h3 class="step__title item-title">Эксперт уточняет ваш запрос</h3>
+                <p class="step__text item-text">Описываете опыт и желаемую позицию</p>
+              </li>
+              <li class="step">
+                <h3 class="step__title item-title">Отвечаете на вопросы эксперта</h3>
+                <p class="step__text item-text">На коротком звонке</p>
+              </li>
+              <li class="step">
+                <h3 class="step__title item-title">Получаете готовое резюме и сопроводительное</h3>
+                <p class="step__text item-text">Через 2–5 дней</p>
+              </li>
+            </ol>
+            <button class="button button_type_main process__button button-text button_type_request" type="button">Оставить заявку</button>
+          </div>
         </div>
       </section>
       <section class="experts">
@@ -223,10 +287,10 @@
       <section class="price">
         <div class="price__content container section">
           <h2 class="section-title price__title">Стоимость</h2>
-          <ul class="price__tablist list" role="tablist" aria-label="tablist-1">
-            <li class="price__tab">
+          <ul class="rate-tablist price__tablist list" role="tablist" aria-label="tablist-1">
+            <li class="rate-tablist__tab">
               <button
-                class="button price__tab-button price__tab-button_theme_light"
+                class="button rate-tablist__button"
                 id="tab-1"
                 type="button"
                 role="tab"
@@ -236,9 +300,9 @@
                 Резюме с экспертом
               </button>
             </li>
-            <li class="price__tab">
+            <li class="rate-tablist__tab">
               <button
-                class="button price__tab-button price__tab-button_theme_dark"
+                class="button rate-tablist__button"
                 id="tab-2"
                 type="button"
                 role="tab"
