@@ -294,8 +294,6 @@ const initSlider = (slider) => {
 
   let itemWidth = sliderItems[0].clientWidth;
 
-  console.log(itemWidth);
-
   const sliderItemsToShow = Math.floor(sliderContainer.clientWidth / itemWidth);
   // const scrollWidth = Math.round((sliderContainer.scrollWidth - sliderContainer.clientWidth) / Math.round(((sliderContainer.scrollWidth - sliderContainer.clientWidth) / (itemWidth + slideGap))));
 
@@ -337,7 +335,7 @@ const initSlider = (slider) => {
       console.log(currentSlide);
 
       currentSlide += 1;
-      // console.log(currentSlide);
+      console.log(currentSlide);
 
       slideElem.style.transform = `translateX(-${
         +translateXValue + itemWidth + slideGap

@@ -813,6 +813,10 @@ from {opacity: 0;} to {opacity: 1;}
   counter-increment: requests-counter 1;
   flex: 0 0 auto;
   width: clamp(228px, 33.5%, 292px);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: top left;
+
 }
 
 /* .request::before {
@@ -829,10 +833,36 @@ from {opacity: 0;} to {opacity: 1;}
 } */
 
 .request:nth-child(1) {
-  background-image: url(./images/line_1.svg);
-  background-repeat: no-repeat;
-  background-size: auto;
+  background-image: url(./images/bg_request/line_1.svg);
   background-position: top right;
+}
+
+.request:nth-child(2) {
+  background-image: url(./images/bg_request/line_2.svg);
+}
+
+.request:nth-child(3) {
+  background-image: url(./images/bg_request/line_3.svg);
+}
+
+.request:nth-child(4) {
+  background-image: url(./images/bg_request/line_4.svg);
+}
+
+.request:nth-child(5) {
+  background-image: url(./images/bg_request/line_5.svg);
+}
+
+.request:nth-child(6) {
+  background-image: url(./images/bg_request/line_6.svg);
+}
+
+.request:nth-child(7) {
+  background-image: url(./images/bg_request/line_7.svg);
+}
+
+.request:nth-child(8) {
+  background-image: url(./images/bg_request/line_8.svg);
 }
 
 .request__text {
