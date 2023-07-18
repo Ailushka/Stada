@@ -64,7 +64,7 @@ function renderCurrentSubtitle() {
 
   setTimeout(() => {
     siteSubtitleElement.classList.remove('offer__site-subtitle_active');
-  }, 4400);
+  }, 1400);
   currentSubtitleIndex = (currentSubtitleIndex + 1) % siteSubtitles.length;
 }
 
@@ -72,7 +72,7 @@ renderCurrentSubtitle(); // Показываем первый элемент с�
 
 setInterval(() => {
   renderCurrentSubtitle();
-}, 5000);
+}, 2000);
 
 
 /* -------------------- */
@@ -196,91 +196,10 @@ showMoreButtons.forEach(button => {
 })
 
 /* -------------------- */
-/*         Tabs         */
-/* -------------------- */
-
-const tabList = document.querySelector('[role="tablist"]');
-const tabs = document.querySelectorAll('[role="tab"]');
-
-tabList.addEventListener('keydown', changeTabFocus);
-
-tabs.forEach((tab) => {
-    tab.addEventListener('click', changeTabPanel);
-});
-
-
-let tabFocus = 0;
-function changeTabFocus(evt) {
-    const keydownLeft = 37;
-    const keydownRight = 39;
-
-    if (evt.keyCode === keydownLeft || evt.keyCode === keydownRight) {
-        tabs[tabFocus].setAttribute("tabindex", -1);
-    }
-
-    if (evt.keyCode === keydownRight) {
-        tabFocus++;
-        if (tabFocus >= tabs.length) {
-            tabFocus = 0;
-        }
-    }
-
-    if (evt.keyCode === keydownLeft) {
-        tabFocus--;
-        if (tabFocus < 0) {
-            tabFocus = tabs.length - 1;
-        }
-    }
-
-    tabs[tabFocus].setAttribute("tabindex", 0);
-    tabs[tabFocus].focus();
-}
-
-
-function changeTabPanel(evt) {
-    const targetTab = evt.target;
-    const targetPanel = targetTab.getAttribute("aria-controls");
-
-    const tabContainer = targetTab.parentNode.parentNode;
-    const mainContainer = tabContainer.parentNode;
-
-    tabContainer
-        .querySelector('[aria-selected="true"]')
-        .setAttribute("aria-selected", false);
-
-    targetTab.setAttribute("aria-selected", true);
-
-    hideContent(mainContainer, '[role="tabpanel"]');
-    showContent(mainContainer, [`#${targetPanel}`]);
-
-}
-
-function hideContent(parent, content) {
-    parent
-        .querySelectorAll(content)
-        .forEach((item) => {
-          item.setAttribute("hidden", true);
-          item.classList.remove('tabpanel_active');
-          if (item.classList.contains('slider')) {
-            item.classList.remove('slider');
-          }
-        });
-}
-
-function showContent(parent, content) {
-     parent.querySelector(content).removeAttribute('hidden');
-     parent.querySelector(content).classList.add('tabpanel_active');
-     console.log(parent)
-
-     if (parent.classList.contains('process__content')) {
-       parent.querySelector(content).classList.add('slider');
-       initSlider(parent.querySelector(content));
-     }
-}
-
-/* -------------------- */
 /*    Carousel slider   */
 /* -------------------- */
+
+const sliderInstances = {};
 
 const initSlider = (slider) => {
   const sliderContainer = slider.querySelector('.slider__container');
@@ -295,22 +214,19 @@ const initSlider = (slider) => {
   let itemWidth = sliderItems[0].clientWidth;
 
   const sliderItemsToShow = Math.floor(sliderContainer.clientWidth / itemWidth);
-  // const scrollWidth = Math.round((sliderContainer.scrollWidth - sliderContainer.clientWidth) / Math.round(((sliderContainer.scrollWidth - sliderContainer.clientWidth) / (itemWidth + slideGap))));
 
   let resizeTimer;
 
   function handleResize() {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(function() {
-    currentSlide = 0;
-    sliderContainer.style.transform = "translateY(0px)";
-    prev.classList.add("slide-arrow_disabled");
-    next.classList.remove("slide-arrow_disabled");
-    itemWidth = sliderItems[0].clientWidth;
-    const scrollWidthNext = itemWidth + slideGap;
-
-  }, 200);
-}
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      currentSlide = 0;
+      sliderContainer.style.transform = "translateY(0px)";
+      prev.classList.add("slide-arrow_disabled");
+      next.classList.remove("slide-arrow_disabled");
+      itemWidth = sliderItems[0].clientWidth;
+    }, 200);
+  }
 
   sliderContainer.style.transform = "translateY(0px)";
 
@@ -332,17 +248,12 @@ const initSlider = (slider) => {
     const translateXValue = slideTransformValue.replace(/[^\d.]/g, "");
 
     if (condition && event === "next") {
-      console.log(currentSlide);
-
       currentSlide += 1;
-      console.log(currentSlide);
-
       slideElem.style.transform = `translateX(-${
         +translateXValue + itemWidth + slideGap
       }px)`;
     } else if (condition && event === "prev") {
       currentSlide -= 1;
-
       slideElem.style.transform = `translateX(-${
         +translateXValue - itemWidth - slideGap
       }px)`;
@@ -364,9 +275,106 @@ const initSlider = (slider) => {
   next.addEventListener("click", handleNextClick);
   prev.addEventListener("click", handlePrevClick);
 
-  // window.addEventListener('resize', handleResize);
+  const removeClickHandlers = () => {
+    next.removeEventListener("click", handleNextClick);
+    prev.removeEventListener("click", handlePrevClick);
+  };
+
+  sliderInstances[slider.getAttribute("id")] = {
+    removeClickHandlers,
+    sliderContainer,
+    next,
+    prev
+  };
 };
 
 const sliders = document.querySelectorAll('.slider');
 
 sliders.forEach(slider => initSlider(slider));
+
+/* -------------------- */
+/*         Tabs         */
+/* -------------------- */
+
+const tabList = document.querySelector('[role="tablist"]');
+const tabs = document.querySelectorAll('[role="tab"]');
+
+tabList.addEventListener('keydown', changeTabFocus);
+
+tabs.forEach((tab) => {
+  tab.addEventListener('click', changeTabPanel);
+});
+
+let tabFocus = 0;
+
+function changeTabFocus(evt) {
+  const keydownLeft = 37;
+  const keydownRight = 39;
+
+  if (evt.keyCode === keydownLeft || evt.keyCode === keydownRight) {
+    tabs[tabFocus].setAttribute("tabindex", -1);
+  }
+
+  if (evt.keyCode === keydownRight) {
+    tabFocus++;
+    if (tabFocus >= tabs.length) {
+      tabFocus = 0;
+    }
+  }
+
+  if (evt.keyCode === keydownLeft) {
+    tabFocus--;
+    if (tabFocus < 0) {
+      tabFocus = tabs.length - 1;
+    }
+  }
+
+  tabs[tabFocus].setAttribute("tabindex", 0);
+  tabs[tabFocus].focus();
+}
+
+function changeTabPanel(evt) {
+  const targetTab = evt.target;
+  const targetPanel = targetTab.getAttribute("aria-controls");
+
+  const tabContainer = targetTab.parentNode.parentNode;
+  const mainContainer = tabContainer.parentNode;
+
+  tabContainer
+    .querySelector('[aria-selected="true"]')
+    .setAttribute("aria-selected", false);
+
+  targetTab.setAttribute("aria-selected", true);
+
+  hideContent(mainContainer, '[role="tabpanel"]');
+  showContent(mainContainer, [`#${targetPanel}`]);
+}
+
+function hideContent(parent, content) {
+  parent
+    .querySelectorAll(content)
+    .forEach((item) => {
+      item.setAttribute("hidden", true);
+      item.classList.remove('tabpanel_active');
+      const panelId = item.getAttribute("id");
+      const sliderInstance = sliderInstances[panelId];
+      if (sliderInstance) {
+        sliderInstance.removeClickHandlers();
+        sliderInstance.sliderContainer.classList.remove('slider');
+      }
+    });
+}
+
+function showContent(parent, content) {
+  parent.querySelector(content).removeAttribute('hidden');
+  parent.querySelector(content).classList.add('tabpanel_active');
+
+  const panelId = parent.querySelector(content).getAttribute("id");
+  console.log(sliderInstances);
+  const sliderInstance = sliderInstances[panelId];
+  if (sliderInstance) {
+    parent.querySelector(content).classList.add('slider');
+    sliderInstance.removeClickHandlers();
+    initSlider(parent.querySelector(content));
+  }
+}

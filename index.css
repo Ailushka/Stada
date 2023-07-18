@@ -835,34 +835,42 @@ from {opacity: 0;} to {opacity: 1;}
 .request:nth-child(1) {
   background-image: url(./images/bg_request/line_1.svg);
   background-position: top right;
+  /* width: calc(242 / 750 * 100%); */
 }
 
 .request:nth-child(2) {
   background-image: url(./images/bg_request/line_2.svg);
+  /* width: calc(256 / 750 * 100%); */
 }
 
 .request:nth-child(3) {
   background-image: url(./images/bg_request/line_3.svg);
+  /* width: calc(240 / 750 * 100%); */
 }
 
 .request:nth-child(4) {
   background-image: url(./images/bg_request/line_4.svg);
+  /* width: calc(292 / 750 * 100%); */
 }
 
 .request:nth-child(5) {
   background-image: url(./images/bg_request/line_5.svg);
+  /* width: calc(232 / 750 * 100%); */
 }
 
 .request:nth-child(6) {
   background-image: url(./images/bg_request/line_6.svg);
+  /* width: calc(264 / 750 * 100%); */
 }
 
 .request:nth-child(7) {
   background-image: url(./images/bg_request/line_7.svg);
+  /* width: calc(228 / 750 * 100%); */
 }
 
 .request:nth-child(8) {
   background-image: url(./images/bg_request/line_8.svg);
+  /* width: calc(272 / 750 * 100%); */
 }
 
 .request__text {
