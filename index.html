@@ -14,6 +14,26 @@
     <header class="header">
       <div class="header__content container">
         <img class="logo" src="./images/logo.svg" alt="Логотип Яндекс Практикума">
+        <button class="btn burger"><span class="burger__icon"></span></button>
+        <nav class="header__nav nav">
+          <ul class="nav-list list">
+            <li class="nav-list__item">
+              <a class="nav-list__link link section-text" href="#audience">Кому подойдёт</a>
+            </li>
+            <li class="nav-list__item">
+              <a class="nav-list__link link section-text" href="#">С чем поможем</a>
+            </li>
+            <li class="nav-list__item">
+              <a class="nav-list__link link section-text" href="#">Как это работает</a>
+            </li>
+            <li class="nav-list__item">
+              <a class="nav-list__link link section-text" href="#experts">Эксперты</a>
+            </li>
+            <li class="nav-list__item">
+              <a class="nav-list__link link section-text" href="#price">Стоимость</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
 
@@ -21,9 +41,8 @@
       <section class="offer">
         <div class="offer__content container section">
           <div class="offer__info">
-            <h1 class="offer__title site-title">Поможем составить резюме <span class="offer__site-subtitle site-subtitle"></span></h1>
-            <p class="offer__subtitle section-subtitle">Разберём ваш опыт в удобном формате: на онлайн-консультации с экспертом или сами опишем всё в готовом резюме и сопроводительном письме</p>
-            <button class="button button_type_main offer__button button-text button_type_request" type="button">Оставить заявку</button>
+            <h1 class="offer__title site-title">Cоздайте сильное резюме с&nbsp;IT-экспертами<span class="offer__site-subtitle site-subtitle"></span></h1>
+            <button class="button button_type_main offer__button button-text button_type_request" type="button">Узнать подробнее</button>
           </div>
           <picture class="offer__image-container">
             <source srcset="./images/main-illustration_mobile.png" media="(max-width: 540px)">
@@ -32,61 +51,118 @@
           </picture>
         </div>
       </section>
-      <section class="problems">
-        <div class="problems__content container section">
-          <h2 class="problems__title section-title">Мы знаем, как&nbsp;справиться с&nbsp;трудностями</h2>
-          <ul class="problems__list list">
-            <li class="problem problem_type_invitation">
-              <p class="problem__text section-text">Хочу получать больше приглашений от работодателей</p>
+
+      <section class="advantages">
+        <ul class="advantages__content list container section">
+          <li class="advantage advantage_type_customized">
+            <p class="advantage__text section-text">Сделаем «под ключ» — составим резюме и сопроводительное письмо под ваши цели</p>
+          </li>
+          <li class="advantage advantage_type_numerous">
+            <p class="advantage__text section-text">Помогли с резюме более 10 000 человек</p>
+          </li>
+          <li class="advantage advantage_type_experienced">
+            <p class="advantage__text section-text">Все эксперты — действующие рекрутеры и нанимающие менеджеры в сфере IT</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="users" id="audience">
+        <div class="users__content container section">
+          <h2 class="users__title section-title">Подойдёт специалистам любого&nbsp;уровня,&nbsp;которые</h2>
+          <ul class="users__list list">
+            <li class="user user_type_change">
+              <h3 class="user__title card-title">Хотят перейти в IT или поменять направление</h3>
+              <p class="user__text section-text">Выделим ваши сильные стороны, даже если пока нет большого опыта. Напишем о нём в резюме так, чтобы претендовать на junior позиции.</p>
             </li>
-            <li class="problem problem_type_fail">
-              <p class="problem__text section-text">Не зовут на собеседования</p>
+            <li class="user user_type_upgrade">
+              <h3 class="user__title card-title">Ищут новые карьерные возможности</h3>
+              <p class="user__text section-text">Составим резюме для позиции senior или middle: расставим акценты, чтобы показать ваши навыки и достижения.</p>
             </li>
-            <li class="problem problem_type_presentation">
-              <p class="problem__text section-text">Хочу грамотно преподнести свои навыки и достижения</p>
+            <li class="user user_type_optimize">
+              <h3 class="user__title card-title">Хотят сэкономить время на обновлении резюме</h3>
+              <p class="user__text section-text">Подготовим сопроводительное письмо и резюме для ваших целей. Останется только откликнуться на вакансии.</p>
             </li>
-            <li class="problem problem_type_up-to-date">
-              <p class="problem__text section-text">Не знаю, как сделать резюме актуальным под запросы рынка и компаний</p>
-            </li>
-            <li class="problem problem_type_accent">
-              <p class="problem__text section-text">Хочу выделиться среди других кандидатов</p>
-            </li>
-            <li class="problem problem_type_time">
-              <p class="problem__text section-text">Нет времени на обновление резюме и сопроводительного</p>
+            <li class="user user_type_finalize">
+              <h3 class="user__title card-title">Уже определились c компанией</h3>
+              <p class="user__text section-text">Объясним, на что обращают внимание рекрутеры этой сферы, и соберём резюме под их требования.</p>
             </li>
           </ul>
         </div>
       </section>
+
+      <section class="requests" id="requests">
+        <div class="requests__content container">
+          <h2 class="requests__title section-title section">С какими запросами к нам обращаются</h2>
+          <div class="requests__slider section">
+            <div class="slider">
+              <div class="control-buttons requests__control-buttons">
+                <button class="slide-arrow slide-arrow_prev"></button>
+                <button class="slide-arrow slide-arrow_next"></button>
+              </div>
+              <ul class="requests__list list slider__container">
+                <li class="request slider__item">
+                  <p class="request__text section-subtitle">Почему приходит мало приглашений от работодателей и как это исправить</p>
+                </li>
+                <li class="request slider__item">
+                  <p class="request__text section-subtitle">Как подготовить резюме и сопроводительное письмо для конкретной компании</p>
+                </li>
+                <li class="request slider__item">
+                  <p class="request__text section-subtitle">Как заполнять резюме на разных площадках, чтобы его замечали HR при поиске кандидатов</p>
+                </li>
+                <li class="request slider__item">
+                  <p class="request__text section-subtitle">Как грамотно упаковать свой опыт при переходе на более высокую должность или в новую сферу</p>
+                </li>
+                <li class="request slider__item">
+                  <p class="request__text section-subtitle">Насколько ваш опыт и навыки подходит под запросы рынка и работодателей</p>
+                </li>
+                <li class="request slider__item">
+                  <p class="request__text section-subtitle">Что писать в отклике на вакансии, если в опыте пока только учебные проекты</p>
+                </li>
+                <li class="request slider__item">
+                  <p class="request__text section-subtitle">Как определиться со стратегией поиска работы</p>
+                </li>
+                <li class="request slider__item">
+                  <p class="request__text section-subtitle">На что смотрят работодатели в иностранных компаниях</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="features">
         <div class="features__content container section">
-          <h2 class="features__title section-title">С чем поможем</h2>
+          <h2 class="features__title section-title">Составим резюме, с которым вас позовут на собеседование</h2>
           <ul class="features__list list">
             <li class="feature feature_type_experience">
               <img class="feature__image" src="./images/cv-illustration.jpg" alt="Написание резюме">
               <div class="feature__content">
-                <h3 class="feature__title item-title">Поможем описать ваш опыт и кейсы</h3>
-                <p class="feature__text item-text">Вместе с экспертом погрузитесь в ваш опыт и разберёте его. Поговорите о том, как правильно презентовать себя и на чём сделать акцент, чтобы в компании заметили ваше резюме.</p>
+                <h3 class="feature__title item-title">Разберём ваш опыт и цели</h3>
+                <p class="feature__text item-text">Вместе с экспертом погрузитесь в ваш опыт и достижения. Поговорите о том, как правильно презентовать себя и на каких результатах сделать акцент.</p>
+                <p class="feature__text item-text">Если много лет работаете в одной сфере и хотите перейти в IT, эксперт расскажет о ситуации на рынке и поможет упаковать ваш опыт под запросы работодателей.</p>
               </div>
             </li>
             <li class="feature feature_type_design">
-              <h3 class="feature__title item-title">Подскажем, как&nbsp;правильно оформить резюме</h3>
-              <p class="feature__text item-text">Эксперт расскажет, как лучше приоритизировать информацию, о чём рассказать сначала, а что можно опустить ниже. Также поможет выбрать правильный шаблон и аккуратно разделить текст на блоки.</p>
+              <h3 class="feature__title item-title">Объясним, как&nbsp;выбирают работодатели</h3>
+              <p class="feature__text item-text">Об этом вам расскажут эксперты с опытом рекрутмента в крупных корпорациях или небольших стартапах.</p>
+              <p class="feature__text item-text">Они действующие нанимающие специалисты, поэтому разбираются в процессе найма и поделятся практическими советами, как адаптировать резюме под компанию.</p>
             </li>
             <li class="feature feature_type_customization">
-              <h3 class="feature__title item-title">Объясним, на&nbsp;что&nbsp;смотрят работодатели</h3>
-              <p class="feature__text item-text">Вам помогут эксперты с опытом рекрутмента в крупных корпорациях или небольших стартапах. Они действующие специалисты, поэтому разбираются в процессе найма и поделятся практическими советами, как адаптировать резюме под нужный тип компании.</p>
+              <h3 class="feature__title item-title">Сделаем резюме, которое заметит рекрутер</h3>
+              <p class="feature__text item-text">Эксперт объяснит, как лучше приоритизировать информацию и как грамотно рассказать о достижениях.</p>
+              <p class="feature__text item-text">Вместе с экпертом составите понятную структуру и правильно оформите резюме, которое выделит вас среди других кандидатов.</p>
             </li>
             <li class="feature feature_type_job-search">
-              <h3 class="feature__title item-title">Расскажем, где искать вакансии</h3>
-              <p class="feature__subtitle card-title">&rarr; в локальные и международные компании</p>
-              <p class="feature__text item-text">Эксперт изучит вашу цель и подберёт подходящие площадки для поиска работы. Расскажет, как работать с зарубежными компаниями и заказчиками, что для этого нужно, а также поможет найти альтернативные иностранные площадки.</p>
+              <h3 class="feature__title item-title">Расскажем, где&nbsp;искать вакансии</h3>
+              <p class="feature__subtitle item-subtitle">&rarr; в локальные и международные компании</p>
+              <p class="feature__text item-text">Эксперт изучит вашу цель и подберёт подходящие площадки для поиска работы. Объяснит, как работать с зарубежными компаниями и заказчиками. После этого вместе определите план действий.</p>
             </li>
           </ul>
         </div>
       </section>
       <section class="process">
         <div class="process__content container section">
-          <h2 class="process__title section-title">Как проходит подготовка</h2>
+          <h2 class="process__title section-title">Как проходит консультация</h2>
           <ul class="rate-tablist process__tablist list" role="tablist" aria-label="tablist-1">
             <li class="rate-tablist__tab">
               <button
@@ -114,72 +190,64 @@
               </button>
             </li>
           </ul>
-          <div class="process__tabpanel tabpanel tabpanel_active" id="tabpanel-1" role="tabpanel" aria-labelledby="tab-1">
-            <ul class="process__list process__list_type_general list steps">
-              <li class="step step_type_general">
-                <h3 class="step__title card-title">Сколько у вас займёт времени:</h3>
-                <p class="step__text item-title">Около 3 часов</p>
-              </li>
-              <li class="step step_type_general">
-                <img class="step__image" src="./images/process_rate_optimum.jpg" alt="Резюме с экспертом">
-              </li>
-            </ul>
-            <ol class="process__list list steps">
-              <li class="step">
+          <div class="process__tabpanel tabpanel tabpanel_active slider" id="tabpanel-1" role="tabpanel" aria-labelledby="tab-1">
+
+            <div class="control-buttons process__control-buttons">
+              <button class="slide-arrow slide-arrow_prev"></button>
+              <button class="slide-arrow slide-arrow_next"></button>
+            </div>
+
+            <ol class="process__list list steps slider__container">
+              <li class="step slider__item">
                 <h3 class="step__title item-title">Разбираете резюме и&nbsp;сопроводительное письмо</h3>
                 <p class="step__text item-text">Встречаетесь с экспертом, рассказываете о ваших целях и опыте, обсуждаете текущие версии резюме и письма</p>
               </li>
-              <li class="step">
+              <li class="step slider__item">
                 <h3 class="step__title item-title">Намечаете план действий</h3>
                 <p class="step__text item-text">Что останется сделать, чтобы доработать резюме и сопроводительное</p>
               </li>
-              <li class="step">
+              <li class="step slider__item">
                 <h3 class="step__title item-title">Получаете рекомендации эксперта в чате</h3>
                 <p class="step__text item-text">Общие рекомендации, тезисы, дополнительные ссылки</p>
               </li>
-              <li class="step">
+              <li class="step slider__item">
                 <h3 class="step__title item-title">Дорабатываете по&nbsp;рекомендациям эксперта</h3>
                 <p class="step__text item-text">В течение недели вносите изменения и задаёте вопросы в чате. Эксперт проверяет результаты и делится советами, что можно улучшить.</p>
               </li>
             </ol>
-            <button class="button button_type_main process__button button-text button_type_request" type="button">Оставить заявку</button>
           </div>
           <div class="process__tabpanel tabpanel" id="tabpanel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
-            <ul class="process__list process__list_type_general list steps">
-              <li class="step step_type_general">
-                <h3 class="step__title card-title">Сколько у вас займёт времени:</h3>
-                <p class="step__text item-title">Около 30 минут</p>
-              </li>
-              <li class="step step_type_general">
-                <img class="step__image" src="./images/process_rate_vip.jpg" alt="Резюме «под ключ»">
-              </li>
-            </ul>
-            <ol class="process__list list steps steps_rate_vip">
-              <li class="step">
+
+            <div class="control-buttons process__control-buttons process__control-buttons_test">
+              <button class="slide-arrow slide-arrow_prev"></button>
+              <button class="slide-arrow slide-arrow_next"></button>
+            </div>
+
+            <ol class="process__list list steps steps_rate_vip slider__container">
+              <li class="step slider__item">
                 <h3 class="step__title item-title">Эксперт уточняет ваш запрос</h3>
                 <p class="step__text item-text">Описываете опыт и желаемую позицию</p>
               </li>
-              <li class="step">
+              <li class="step slider__item">
                 <h3 class="step__title item-title">Отвечаете на вопросы эксперта</h3>
                 <p class="step__text item-text">На коротком звонке</p>
               </li>
-              <li class="step">
+              <li class="step slider__item">
                 <h3 class="step__title item-title">Получаете готовое резюме и сопроводительное</h3>
                 <p class="step__text item-text">Через 2–5 дней</p>
               </li>
             </ol>
-            <button class="button button_type_main process__button button-text button_type_request" type="button">Оставить заявку</button>
           </div>
         </div>
       </section>
-      <section class="experts">
+      <section class="experts" id="experts">
         <div class=" experts__content container section">
           <div class="slider">
-            <h2 class="experts__title section-title">Составить резюме помогут действующие специалисты</h2>
-            <p class="experts__subtitle section-subtitle">Эксперты Яндекс Практикума не просто карьерные консультанты. Они каждый день работают как HR или рекрутеры и видят весь процесс найма изнутри компаний, поэтому знают все тонкости и помогут подготовить сильное резюме и сопроводительное письмо</p>
+            <h2 class="experts__title section-title">Вам помогут опытные рекрутеры или специалисты из вашей сферы</h2>
+            <p class="experts__subtitle section-subtitle">Они каждый день работают в крупных компаниях и видят весь процесс найма изнутри, поэтому помогут подготовить сильное описание вашего опыта</p>
             <div class="control-buttons experts__control-buttons">
               <button class="slide-arrow slide-arrow_prev"></button>
-              <button class="slide-arrow slide-arrow_next slide-arrow_active"></button>
+              <button class="slide-arrow slide-arrow_next"></button>
             </div>
             <ul class="experts__list list slider__container">
               <li class="expert slider__item">
@@ -190,92 +258,230 @@
                   <h3 class="expert__title card-title">Екатерина Бутырская</h3>
                   <ul class="expert__about list">
                     <li class="expert__info">
-                      <p class="expert__text item-text">Менеджер продукта</p>
+                      <p class="expert__text item-text">Product Manager карьерного трека — направление менеджмента в Яндекс Практикуме</p>
                     </li>
                     <li class="expert__info">
-                      <p class="expert__text item-text">Опыт работы — более 5 лет</p>
+                      <p class="expert__text item-text">Опыт — 10+ лет HR в IT</p>
                     </li>
                   </ul>
+                  <button class="button button_type_main button_theme_transparent expert__button button-text button_type_show-more" aria-expanded='false'>Подробнее об эксперте</button>
+                </div>
+                <div class="expert__extra-description">
+                  <div class="expert__description expert__description_type_more">
+                    <h4 class="expert__subtitle">Опыт консультаций</h4>
+                    <ul class="expert__about list">
+                      <li class="expert__info">
+                        <p class="expert__text item-text">За последний год провела 200+ карьерных консультаций и проверила 1000+ резюме</p>
+                      </li>
+                      <li class="expert__info">
+                        <p class="expert__text item-text">После карьерного сопровождения — трудоустройство в Роскосмос, БарсГрупп, Газпром, Kokoc Group, Сбер, Ubic и Яндекс</p>
+                      </li>
+                    </ul>
+                    <h4 class="expert__subtitle">Успешные кейсы</h4>
+                    <ul class="expert__about list">
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Рост специалиста в стартапе от джуна до мидла за полгода. Нашли зоны роста, подсветили бизнесовую составляющую работы и разбирали вместе каждый кейс</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </li>
               <li class="expert slider__item">
                 <div class="expert__photo-container">
-                  <img class="expert__photo" src="./images/experts/Tikhonov_Aleksandr.jpg" alt="Фотография Александра Тихонова">
+                  <img class="expert__photo" src="./images/experts/Aravina_Yulia.jpg" alt="Фотография Юлии Аравиной">
                 </div>
                 <div class="expert__description">
-                  <h3 class="expert__title card-title">Александр Тихонов</h3>
+                  <h3 class="expert__title card-title">Юлия Аравина</h3>
                   <ul class="expert__about list">
                     <li class="expert__info">
-                      <p class="expert__text item-text">Руководитель группы дизайна</p>
+                      <p class="expert__text item-text">Коуч IT-руководителей, сооснователь стартапа полезных привычек Ecowelly, работала в Яндекс Практикуме, DINS, Nexign</p>
                     </li>
                     <li class="expert__info">
-                      <p class="expert__text item-text">Опыт работы — 5 лет</p>
+                      <p class="expert__text item-text">Опыт — 10+ лет в HR</p>
                     </li>
                   </ul>
+                  <button class="button button_type_main button_theme_transparent expert__button button-text button_type_show-more" aria-expanded='false'>Подробнее об эксперте</button>
+                </div>
+                <div class="expert__extra-description">
+                  <div class="expert__description expert__description_type_more">
+                    <h4 class="expert__subtitle">Опыт консультаций</h4>
+                    <ul class="expert__about list">
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Ведёт коучинговую практику, работает с карьерными запросами</p>
+                      </li>
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Суммарно — больше 1200 часов коучингового консультирования</p>
+                      </li>
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Больше 300 клиентов со всего мира</p>
+                      </li>
+                    </ul>
+                    <h4 class="expert__subtitle">Успешные кейсы</h4>
+                    <ul class="expert__about list">
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Трудоустройство в международную IT-компанию с релокацией и хорошим компенсационным пакетом — без опыта в IT</p>
+                      </li>
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Переход в IT-компанию на позицию проджект-менеджера у человека, который руководил магазинами элитного вина и никогда не работал в IT</p>
+                      </li>
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Переход из фриланса в крупную международную IT-компанию у UX-аналитика, рост дохода х2 или х3, офферы от топовых IT-компаний</p>
+                      </li>
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Трудоустройство на позицию IT-рекрутера в международную компанию у человека без релевантного опыта, кардинально меняющего карьерный трек</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </li>
               <li class="expert slider__item">
                 <div class="expert__photo-container">
-                  <img class="expert__photo" src="./images/experts/Chechenev_Maksim.jpg" alt="Фотография Максима Чеченёва">
+                  <img class="expert__photo" src="./images/experts/Shlupkin_Pavel.jpg" alt="Фотография Павла Шлюпкина">
                 </div>
                 <div class="expert__description">
-                  <h3 class="expert__title card-title">Максим Чеченёв</h3>
+                  <h3 class="expert__title card-title">Павел Шлюпкин</h3>
                   <ul class="expert__about list">
                     <li class="expert__info">
-                      <p class="expert__text item-text">Фронтенд-разработчик</p>
+                      <p class="expert__text item-text">Старший рекрутер в Яндекс Практикуме, работал в EPAM и VK</p>
                     </li>
                     <li class="expert__info">
-                      <p class="expert__text item-text">Опыт работы — более 10 лет</p>
+                      <p class="expert__text item-text">Опыт — 4 года</p>
                     </li>
                   </ul>
+                  <button class="button button_type_main button_theme_transparent expert__button button-text button_type_show-more" aria-expanded='false'>Подробнее об эксперте</button>
+                </div>
+                <div class="expert__extra-description">
+                  <div class="expert__description expert__description_type_more">
+                    <h4 class="expert__subtitle">Опыт консультаций</h4>
+                    <ul class="expert__about list">
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Просмотрел 5000 резюме</p>
+                      </li>
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Провёл 2000+ собеседований, из них — 100 на английском языке</p>
+                      </li>
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Закрыл 150 наймов IT-специалистов</p>
+                      </li>
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Провёл 150+ консультаций</p>
+                      </li>
+                    </ul>
+                    <h4 class="expert__subtitle">Успешный кейс</h4>
+                    <ul class="expert__about list">
+                      <li class="expert__info">
+                        <p class="expert__text item-text">После консультации человек получил оффер в Тинькофф на позицию бизнес-аналитика, а также общался с тремя другими командами компании, и дан из них были брать сделать оффер</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </li>
               <li class="expert slider__item">
                 <div class="expert__photo-container">
-                  <img class="expert__photo" src="./images/experts/Lakosina_Nelli.jpg" alt="Фотография Нелли Лакосиной">
+                  <img class="expert__photo" src="./images/experts/Shashina_Viktoria.jpg" alt="Фотография Виктории Шашиной">
                 </div>
                 <div class="expert__description">
-                  <h3 class="expert__title card-title">Нелли Лакосина</h3>
+                  <h3 class="expert__title card-title">Виктория Шашина</h3>
                   <ul class="expert__about list">
                     <li class="expert__info">
-                      <p class="expert__text item-text">HR-эксперт</p>
+                      <p class="expert__text item-text">IT-рекрутер, работала в Spice IT agency, Glowbyte consulting, CNS</p>
                     </li>
                     <li class="expert__info">
-                      <p class="expert__text item-text">Опыт работы — более 15 лет</p>
+                      <p class="expert__text item-text">Опыт — 5 лет</p>
                     </li>
                   </ul>
+                  <button class="button button_type_main button_theme_transparent expert__button button-text button_type_show-more" aria-expanded='false'>Подробнее об эксперте</button>
+                </div>
+                <div class="expert__extra-description">
+                  <div class="expert__description expert__description_type_more">
+                    <h4 class="expert__subtitle">Опыт консультаций</h4>
+                    <ul class="expert__about list">
+                      <li class="expert__info">
+                        <p class="expert__text item-text">250+ часов карьерных консультаций</p>
+                      </li>
+                      <li class="expert__info">
+                        <p class="expert__text item-text">1000+ подготовленных к поиску работы резюме</p>
+                      </li>
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Каждую неделю проводит по 25 HR-собеседований и точно знает, как составить хорошую самопрезентацию</p>
+                      </li>
+                    </ul>
+                    <h4 class="expert__subtitle">Успешный кейс</h4>
+                    <ul class="expert__about list">
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Трудоуствойство в IT-компанию из другой сферы, х2 в зарплате: переписали резюме, подробно описали учебные проекты, благодаря чему позвали на собеседования</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </li>
               <li class="expert slider__item">
                 <div class="expert__photo-container">
-                  <img class="expert__photo" src="./images/experts/Ganiukov_Egor.png" alt="Фотография Егора Ганюкова">
+                  <img class="expert__photo" src="./images/experts/Shmyrova_Anastasia.jpg" alt="Фотография Анастасии Шмыровой">
                 </div>
                 <div class="expert__description">
-                  <h3 class="expert__title card-title">Егор Ганюков</h3>
+                  <h3 class="expert__title card-title">Анастасия Шмырова</h3>
                   <ul class="expert__about list">
                     <li class="expert__info">
-                      <p class="expert__text item-text">Менеджер по маркетингу</p>
+                      <p class="expert__text item-text">Старший IT рекрутер в команде геосервисов Яндекса, работала в Kaspersky Lab, Spice IT Recruitment</p>
                     </li>
                     <li class="expert__info">
-                      <p class="expert__text item-text">Опыт работы — 8 лет</p>
+                      <p class="expert__text item-text">Опыт — 11 лет в IT</p>
                     </li>
                   </ul>
+                  <button class="button button_type_main button_theme_transparent expert__button button-text button_type_show-more" aria-expanded='false'>Подробнее об эксперте</button>
+                </div>
+                <div class="expert__extra-description">
+                  <div class="expert__description expert__description_type_more">
+                    <h4 class="expert__subtitle">Опыт консультаций</h4>
+                    <ul class="expert__about list">
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Помогает составлять резюме и сопроводительные письма</p>
+                      </li>
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Проводит собеседования и нанимает сппециалистов в сфере IT</p>
+                      </li>
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Получила ачивку за 100 принятых офферов в Яндексе</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </li>
               <li class="expert slider__item">
                 <div class="expert__photo-container">
-                  <img class="expert__photo" src="./images/experts/Shagaev_Oleg.jpg" alt="Фотография Олега Шагаева">
+                  <img class="expert__photo" src="./images/experts/Kozlikina_Irina.jpg" alt="Фотография Ирины Козликиной">
                 </div>
                 <div class="expert__description">
-                  <h3 class="expert__title card-title">Олег Шагаев</h3>
+                  <h3 class="expert__title card-title">Ирина Козликина</h3>
                   <ul class="expert__about list">
                     <li class="expert__info">
-                      <p class="expert__text item-text">Руководитель службы разработки</p>
+                      <p class="expert__text item-text">HR Generalist в Яндекс Практикуме</p>
                     </li>
                     <li class="expert__info">
-                      <p class="expert__text item-text">Опыт работы — более 5 лет</p>
+                      <p class="expert__text item-text">Опыт — 4 года</p>
                     </li>
                   </ul>
+                  <button class="button button_type_main button_theme_transparent expert__button button-text button_type_show-more" aria-expanded='false'>Подробнее об эксперте</button>
+                </div>
+                <div class="expert__extra-description">
+                  <div class="expert__description expert__description_type_more">
+                    <h4 class="expert__subtitle">Опыт консультаций</h4>
+                    <ul class="expert__about list">
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Проверила и составила с нуля больше 100 резюме</p>
+                      </li>
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Работает с сопроводительными письмами</p>
+                      </li>
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Проводит персональные профориентационные консультации</p>
+                      </li>
+                      <li class="expert__info">
+                        <p class="expert__text item-text">Помогает подготовиться к собеседованию</p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </li>
             </ul>
@@ -284,9 +490,9 @@
 
       </section>
 
-      <section class="price">
+      <section class="price" id="price">
         <div class="price__content container section">
-          <h2 class="section-title price__title">Стоимость</h2>
+          <h2 class="section-title price__title">Сколько стоит</h2>
           <ul class="rate-tablist price__tablist list" role="tablist" aria-label="tablist-1">
             <li class="rate-tablist__tab">
               <button
@@ -315,25 +521,25 @@
             </li>
           </ul>
           <div class="price__tabpanel tabpanel tabpanel_active" id="tabpanel-1" role="tabpanel" aria-labelledby="tab-1">
-            <h3 class="price__tabpanel-title section-title">Стоимость 4 500 &#8381;</h3>
+            <h3 class="price__tabpanel-title section-title">4 500 &#8381;</h3>
             <ul class="price__tabpanel-content list">
               <li class="price-info">
-                <p class="price-info__text item-text">предварительный анализ вашего опыта</p>
+                <p class="price-info__text section-subtitle">Предварительный анализ вашего опыта</p>
               </li>
               <li class="price-info">
-                <p class="price-info__text item-text">консультация с экспертом — 1 час</p>
+                <p class="price-info__text section-subtitle">Консультация с экспертом — 1 час</p>
               </li>
               <li class="price-info">
-                <p class="price-info__text item-text">рекомендации и план от эксперта</p>
+                <p class="price-info__text section-subtitle">Рекомендации и план от эксперта</p>
               </li>
               <li class="price-info">
-                <p class="price-info__text item-text">самостоятельная подготовка резюме и сопроводительного письма</p>
+                <p class="price-info__text section-subtitle">Самостоятельная подготовка резюме и сопроводительного письма</p>
               </li>
               <li class="price-info">
-                <p class="price-info__text item-text">помощь в доработке и сопровождение в чате — в течение 1 недели</p>
+                <p class="price-info__text section-subtitle">Помощь в доработке и сопровождение в чате — 1 неделя</p>
               </li>
             </ul>
-            <button class="button button_type_main button_theme_light price__button button-text button_type_request" type="button">Оставить заявку</button>
+            <button class="button button_type_main price__button button-text button_type_request" type="button">Оставить заявку</button>
             <picture class="price__background-image">
               <source srcset="./images/bg_price_mobile.png" media="(max-width: 992px)">
               <source srcset="./images/bg_price_rate_optimum.png">
@@ -341,16 +547,16 @@
             </picture>
           </div>
           <div class="price__tabpanel price__tabpanel_theme_dark tabpanel" id="tabpanel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
-            <h3 class="price__tabpanel-title section-title">Стоимость 5 500 &#8381;</h3>
+            <h3 class="price__tabpanel-title section-title">5 500 &#8381;</h3>
             <ul class="price__tabpanel-content list">
               <li class="price-info">
-                <p class="price-info__text item-text">вы рассказываете о своём опыте и желаемой позиции</p>
+                <p class="price-info__text section-subtitle">Вы рассказываете о своём опыте и желаемой позиции</p>
               </li>
               <li class="price-info">
-                <p class="price-info__text item-text">мы отравляем вам готовое резюме и сопроводительное письмо — через 2–5 дней</p>
+                <p class="price-info__text section-subtitle">Мы отправляем вам готовое резюме и сопроводительное письмо — через 2–5 дней</p>
               </li>
               <li class="price-info">
-                <p class="price-info__text item-text">сопровождаем в чате и отвечаем на вопросы — в течение 1 недели</p>
+                <p class="price-info__text section-subtitle">Сопровождаем в чате и отвечаем на вопросы — 1 неделя</p>
               </li>
             </ul>
             <button class="button button_type_main button_theme_light price__button button-text button_type_request" type="button">Оставить заявку</button>
@@ -363,37 +569,6 @@
         </div>
 
       </section>
-      <!-- <section class="price">
-        <picture class="price__background-image">
-          <source srcset="./images/bg_price_mobile.png" media="(max-width: 992px)">
-          <source srcset="./images/bg_price.png">
-          <img class="price__image" src="./images/bg_price.png" alt="Ася Ермолаева на бейдже">
-        </picture>
-        <div class="price__content container section">
-          <h2 class="section-title price__title">Стоимость</h2>
-
-          <h2 class="price__title section-title">Стоимость 4 500 &#8381;</h2>
-          <ul class="price__list list">
-            <li class="price-info">
-              <p class="price-info__text item-text">предварительный анализ вашего опыта</p>
-            </li>
-            <li class="price-info">
-              <p class="price-info__text item-text">консультация с экспертом — 1 час</p>
-            </li>
-            <li class="price-info">
-              <p class="price-info__text item-text">рекомендации и план от эксперта</p>
-            </li>
-            <li class="price-info">
-              <p class="price-info__text item-text">самостоятельная подготовка резюме и сопроводительного письма</p>
-            </li>
-            <li class="price-info">
-              <p class="price-info__text item-text">помощь в доработке и сопровождение в чате — в течение 1 недели</p>
-            </li>
-          </ul>
-          <button class="button button_type_main button_theme_light price__button button-text button_type_request" type="button">Оставить заявку</button>
-        </div>
-      </section>
- -->
       <section class="reviews">
         <div class="reviews__content container section">
           <div class="slider">
@@ -445,37 +620,40 @@
 
       <section class="faq">
         <div class="faq__content container section">
-          <h2 class="section-title faq__title">Вопросы и ответы</h2>
+          <h2 class="section-title faq__title">Отвечаем на вопросы</h2>
           <ul class="faq__list accordeon list">
             <li class="question accordeon__button">
-              <button class="question__title card-title button">Что такое тренировочное собеседование?</button>
+              <button class="question__title card-title button">Как выглядит совместная работа с экспертом?</button>
               <div class="question__content accordeon__content">
-                <p class="question__text item-text">Его ещё называют «мок-интервью» — это подготовка к реальному собеседованию с экспертом, чтобы попрактиковаться в комфортной обстановке и повысить шансы на получение предложения о работе.</p>
-                <p class="question__text item-text">Узнаете, что чаще всего спрашивают и на что обращают внимание. Эксперт Яндекса сыграет роль нанимающего менеджера компании и задаст вопросы о вашем опыте работы, навыках и достижениях.</p>
+                <p class="question__text item-text">В варианте совместной проработки с экспертом вы встречаетесь на индивидуальной консультации в Zoom, а после встречи получаете разработанный экспертом план и рекомендации, по которым дорабатываете резюме и сопроводительное письмо.</p>
               </div>
             </li>
             <li class="question accordeon__button">
-              <button class="question__title card-title button">Как выглядит работа с экспертом?</button>
+              <button class="question__title card-title button">Чем отличается вариант «под ключ»?</button>
               <div class="question__content accordeon__content">
-                <p class="question__text item-text">Это индивидуальная встреча в Zoom, на которой присутствуете только вы и эксперт. Эксперт сыграет роль нанимающего менеджера и задаст вопросы о вашем опыте работы, навыках и достижениях. После этого вы получите подробную обратную связь и рекомендации, что можно улучшить.</p>
+                <p class="question__text item-text">Самое главное — временем, которое вы затратите.</p>
+                <p class="question__text item-text">В варианте «под ключ» вам нужно только рассказать о вашем опыте, а остальное сделаем за вас. Вы можете ответить на вопросы голосом на коротком звонке или другим удобным способом. По нашему опыту, это занимает до 30 минут.</p>
+                <p class="question__text item-text">В варианте подготовки вместе с экспертом потребуется больше времени: 1 час займёт сама консультация, затем понадобится несколько часов, чтобы самостоятельно внести все комментарии и доработать резюме и сопроводительное.</p>
               </div>
             </li>
             <li class="question accordeon__button">
               <button class="question__title card-title button">Кто будет моим экспертом?</button>
               <div class="question__content accordeon__content">
-                <p class="question__text item-text">Мы подбираем эксперта, исходя из ваших целей и запроса. Все эксперты Яндекса — действующие профессионалы. Среди них есть руководители, разработчики, аналитики, дизайнеры, HR-специалисты и многие другие.</p>
+                <p class="question__text item-text">Мы подбираем эксперта, исходя из ваших целей и запроса. Все эксперты — действующие специалисты Яндекса и других компаний. Среди них HR-специалисты и рекрутеры. Они много проработали в сфере, поэтому знают, как проходит всё со стороны компании и на что обращать внимание.</p>
               </div>
             </li>
             <li class="question accordeon__button">
-              <button class="question__title card-title button">Сколько стоит тренировочное собеседование?</button>
+              <button class="question__title card-title button">Сколько стоит консультация?</button>
               <div class="question__content accordeon__content">
-                <p class="question__text item-text">Стоимость одного собеседования — 4 500 &#8381;. После того как вы заполните форму, мы свяжемся с вами, подберём удобное время для встречи и отправим ссылку на оплату.</p>
+                <p class="question__text item-text">Стоимость одной встречи с экспертом — 4 500 &#8381;, услуги «под ключ» — 5 500 &#8381;. После того как вы заполните форму, мы свяжемся с вами, обсудим все детали и отправим ссылку на оплату.</p>
+                <p class="question__text item-text">Оплачивать нужно через Яндекс Маркет — для этого просто нужно перейти по ссылке, которую мы вам отправим, и купить сертификат на одну консультацию.</p>
               </div>
             </li>
             <li class="question accordeon__button">
               <button class="question__title card-title button">Сколько времени занимает собеседование?</button>
               <div class="question__content accordeon__content">
-                <p class="question__text item-text">Встреча длится 1,5 часа: час отводим на само собеседование и ещё полчаса на обратную связь и дополнительную информацию. Также в течение недели у вас будет доступен чат с экспертом, где можно задать вопросы или спросить совет.</p>
+                <p class="question__text item-text"><span class="bold-text">Встреча с экспертом</span> занимает 1 час. Также советуем заложить ещё несколько часов после встречи, чтобы внести все комментарии и доработать текст. В течение недели у вас будет доступен чат с экспертом, где можно задать вопросы или спросить совет.</p>
+                <p class="question__text item-text"><span class="bold-text">Услуга «под ключ»</span> займёт у вас около 30 минут, чтобы описать ваш опыт и желаемую позицию. Затем через 2–5 дней мы пришлём вам готовое резюме и сопроводительное. Также в течение недели мы можем доработать текст — принимаем до 3 итераций правок.</p>
               </div>
             </li>
             <li class="question accordeon__button">
@@ -485,9 +663,10 @@
               </div>
             </li>
             <li class="question accordeon__button">
-              <button class="question__title card-title button">Что я получу после собеседования?</button>
+              <button class="question__title card-title button">Что я получу после консультации с экспертом?</button>
               <div class="question__content accordeon__content">
-                <p class="question__text item-text">После встречи эксперт отправит вам в чат рекомендации для подготовки к интервью и дополнительные материалы, если вы говорили о них. Запись встречи можем выслать по запросу.</p>
+                <p class="question__text item-text"><span class="bold-text">В тарифе с экспертом:</span> после встречи эксперт отправит вам в чат рекомендации для подготовки резюме и дополнительные материалы, если вы говорили о них на консультации. Запись консультации можем отправить по запросу. Также 1 неделю вам будет доступен чат, где вы можете задать вопросы или показать эксперту подготовленное резюме и получить обратную связь.</p>
+                <p class="question__text item-text"><span class="bold-text">В тарифе «под ключ»:</span> отправим вам готовое резюме и сопроводительное письмо, которые можно сразу отправить работодателю. Если нужно будет что‑то поправить или доработать, вы можете написать об этом в чате — он будет доступен в течение 1 недели. Доступно до 3 итераций правок включительно.</p>
               </div>
             </li>
           </ul>

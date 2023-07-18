@@ -1,16 +1,59 @@
 /* -------------------- */
+/*     Smooth links     */
+/* -------------------- */
+
+const smoothLinks = document.querySelectorAll('a[href^="#"]');
+for (let smoothLink of smoothLinks) {
+    smoothLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        const id = smoothLink.getAttribute('href');
+
+        document.querySelector(id).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+};
+
+/* -------------------- */
+/*      Mobile menu     */
+/* -------------------- */
+
+const burgerButton = document.querySelector('.burger');
+const nav = document.querySelector('.nav');
+const menuLinks = document.querySelectorAll('.nav-list__link');
+
+burgerButton.addEventListener("click", function () {
+    burgerButton.classList.toggle("burger_active");
+    nav.classList.toggle("nav_opened");
+    nav.classList.toggle("transition");
+    document.querySelector('.page').classList.toggle('no-scroll');
+    document.querySelector('html').classList.toggle('no-scroll');
+});
+
+menuLinks.forEach(menuLink => {
+  menuLink.addEventListener('click', () => {
+    burgerButton.classList.remove("burger_active");
+    nav.classList.remove("nav_opened");
+    nav.classList.remove("transition");
+    document.querySelector('.page').classList.remove('no-scroll');
+    document.querySelector('html').classList.remove('no-scroll');
+  })
+});
+
+/* -------------------- */
 /*   Heading-subtitle   */
 /* -------------------- */
 
 const siteSubtitleElement = document.querySelector('.site-subtitle');
 
 const siteSubtitles = [
-  '→ которое заметят работодатели',
-  '&rarr; которое выделит вас среди других кандидатов',
-  '&rarr; после которого вас позовут на собеседование',
-  '&rarr; которое не затеряется среди десятков других',
-  '&rarr; которое поможет дойти до собеседования',
-  '&rarr; которое выгодно опишет ваш опыт, навыки и достижения'
+  '&rarr; программирование',
+  '&rarr; аналитика и Data Science',
+  '&rarr; менеджмент',
+  '&rarr; маркетинг',
+  '&rarr; дизайн',
+  '&rarr; HR и рекрутмент'
 ];
 
 let currentSubtitleIndex = 0;
@@ -114,96 +157,6 @@ closeButtons.forEach((item) => {
 });
 
 /* -------------------- */
-/*    Carousel slider   */
-/* -------------------- */
-
-const initSlider = (slider) => {
-  const sliderContainer = slider.querySelector('.slider__container');
-  const sliderItems = slider.querySelectorAll('.slider__item');
-  const next = slider.querySelector('.slide-arrow_next');
-  const prev = slider.querySelector('.slide-arrow_prev');
-  const slideGap = parseInt(getComputedStyle(sliderContainer).gap, 10);
-  let currentSlide = 0;
-
-  sliderItems[currentSlide].classList.add("activeSlide");
-
-  let itemWidth = sliderItems[0].clientWidth;
-
-  const sliderItemsToShow = Math.floor(sliderContainer.clientWidth / itemWidth);
-  // const scrollWidth = Math.round((sliderContainer.scrollWidth - sliderContainer.clientWidth) / Math.round(((sliderContainer.scrollWidth - sliderContainer.clientWidth) / (itemWidth + slideGap))));
-
-  let resizeTimer;
-
-  function handleResize() {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(function() {
-    currentSlide = 0;
-    sliderContainer.style.transform = "translateY(0px)";
-    prev.classList.add("slide-arrow_disabled");
-    next.classList.remove("slide-arrow_disabled");
-    itemWidth = sliderItems[0].clientWidth;
-    const scrollWidthNext = itemWidth + slideGap;
-
-  }, 200);
-}
-
-  sliderContainer.style.transform = "translateY(0px)";
-
-  const toggleClass = (condition, elem, className) => {
-    condition
-      ? elem.classList.add(className)
-      : elem.classList.remove(className);
-  };
-
-  const handlePrevNextBtn = () => {
-    toggleClass(currentSlide === 0, prev, "slide-arrow_disabled");
-    toggleClass(currentSlide === sliderItems.length - sliderItemsToShow, next, "slide-arrow_disabled");
-  };
-
-  handlePrevNextBtn();
-
-  const handleSlide = (condition, slideElem, event) => {
-    const slideTransformValue = slideElem.style.transform;
-    const translateXValue = slideTransformValue.replace(/[^\d.]/g, "");
-
-    if (condition && event === "next") {
-      currentSlide += 1;
-
-      slideElem.style.transform = `translateX(-${
-        +translateXValue + itemWidth + slideGap
-      }px)`;
-    } else if (condition && event === "prev") {
-      currentSlide -= 1;
-
-      slideElem.style.transform = `translateX(-${
-        +translateXValue - itemWidth - slideGap
-      }px)`;
-    }
-    sliderItems.forEach((e) => e.classList.remove("activeSlide"));
-    sliderItems[currentSlide].classList.add("activeSlide");
-  };
-
-  const handleNextClick = () => {
-    handleSlide(currentSlide !== sliderItems.length - sliderItemsToShow, sliderContainer, "next");
-    handlePrevNextBtn();
-  };
-
-  const handlePrevClick = () => {
-    handleSlide(currentSlide !== 0, sliderContainer, "prev");
-    handlePrevNextBtn();
-  };
-
-  next.addEventListener("click", handleNextClick);
-  prev.addEventListener("click", handlePrevClick);
-
-  // window.addEventListener('resize', handleResize);
-};
-
-const sliders = document.querySelectorAll('.slider');
-
-sliders.forEach(slider => initSlider(slider));
-
-/* -------------------- */
 /*       Accordeon      */
 /* -------------------- */
 
@@ -218,6 +171,26 @@ document.querySelectorAll('.accordeon__button').forEach((item) => {
     } else {
       item.classList.remove('accordeon__button_active');
       content.style.maxHeight = '';
+    }
+  })
+})
+
+/* -------------------- */
+/*   Show-more button   */
+/* -------------------- */
+
+const showMoreButtons = document.querySelectorAll('.button_type_show-more');
+
+showMoreButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const moreContent = button.closest('.expert').querySelector('.expert__extra-description');
+
+    if (button.getAttribute('aria-expanded') === 'false') {
+      button.setAttribute('aria-expanded', 'true');
+      moreContent.style.maxHeight = moreContent.scrollHeight + 'px';
+    } else {
+      button.setAttribute('aria-expanded', 'false');
+      moreContent.style.maxHeight = '';
     }
   })
 })
@@ -279,6 +252,7 @@ function changeTabPanel(evt) {
 
     hideContent(mainContainer, '[role="tabpanel"]');
     showContent(mainContainer, [`#${targetPanel}`]);
+
 }
 
 function hideContent(parent, content) {
@@ -287,10 +261,114 @@ function hideContent(parent, content) {
         .forEach((item) => {
           item.setAttribute("hidden", true);
           item.classList.remove('tabpanel_active');
+          if (item.classList.contains('slider')) {
+            item.classList.remove('slider');
+          }
         });
 }
 
 function showContent(parent, content) {
      parent.querySelector(content).removeAttribute('hidden');
      parent.querySelector(content).classList.add('tabpanel_active');
+     console.log(parent)
+
+     if (parent.classList.contains('process__content')) {
+       parent.querySelector(content).classList.add('slider');
+       initSlider(parent.querySelector(content));
+     }
 }
+
+/* -------------------- */
+/*    Carousel slider   */
+/* -------------------- */
+
+const initSlider = (slider) => {
+  const sliderContainer = slider.querySelector('.slider__container');
+  const sliderItems = slider.querySelectorAll('.slider__item');
+  const next = slider.querySelector('.slide-arrow_next');
+  const prev = slider.querySelector('.slide-arrow_prev');
+  const slideGap = parseInt(getComputedStyle(sliderContainer).gap, 10);
+  let currentSlide = 0;
+
+  sliderItems[currentSlide].classList.add("activeSlide");
+
+  let itemWidth = sliderItems[0].clientWidth;
+
+  console.log(itemWidth);
+
+  const sliderItemsToShow = Math.floor(sliderContainer.clientWidth / itemWidth);
+  // const scrollWidth = Math.round((sliderContainer.scrollWidth - sliderContainer.clientWidth) / Math.round(((sliderContainer.scrollWidth - sliderContainer.clientWidth) / (itemWidth + slideGap))));
+
+  let resizeTimer;
+
+  function handleResize() {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function() {
+    currentSlide = 0;
+    sliderContainer.style.transform = "translateY(0px)";
+    prev.classList.add("slide-arrow_disabled");
+    next.classList.remove("slide-arrow_disabled");
+    itemWidth = sliderItems[0].clientWidth;
+    const scrollWidthNext = itemWidth + slideGap;
+
+  }, 200);
+}
+
+  sliderContainer.style.transform = "translateY(0px)";
+
+  const toggleClass = (condition, elem, className) => {
+    condition
+      ? elem.classList.add(className)
+      : elem.classList.remove(className);
+  };
+
+  const handlePrevNextBtn = () => {
+    toggleClass(currentSlide === 0, prev, "slide-arrow_disabled");
+    toggleClass(currentSlide === sliderItems.length - sliderItemsToShow, next, "slide-arrow_disabled");
+  };
+
+  handlePrevNextBtn();
+
+  const handleSlide = (condition, slideElem, event) => {
+    const slideTransformValue = slideElem.style.transform;
+    const translateXValue = slideTransformValue.replace(/[^\d.]/g, "");
+
+    if (condition && event === "next") {
+      console.log(currentSlide);
+
+      currentSlide += 1;
+      // console.log(currentSlide);
+
+      slideElem.style.transform = `translateX(-${
+        +translateXValue + itemWidth + slideGap
+      }px)`;
+    } else if (condition && event === "prev") {
+      currentSlide -= 1;
+
+      slideElem.style.transform = `translateX(-${
+        +translateXValue - itemWidth - slideGap
+      }px)`;
+    }
+    sliderItems.forEach((e) => e.classList.remove("activeSlide"));
+    sliderItems[currentSlide].classList.add("activeSlide");
+  };
+
+  const handleNextClick = () => {
+    handleSlide(currentSlide !== sliderItems.length - sliderItemsToShow, sliderContainer, "next");
+    handlePrevNextBtn();
+  };
+
+  const handlePrevClick = () => {
+    handleSlide(currentSlide !== 0, sliderContainer, "prev");
+    handlePrevNextBtn();
+  };
+
+  next.addEventListener("click", handleNextClick);
+  prev.addEventListener("click", handlePrevClick);
+
+  // window.addEventListener('resize', handleResize);
+};
+
+const sliders = document.querySelectorAll('.slider');
+
+sliders.forEach(slider => initSlider(slider));
