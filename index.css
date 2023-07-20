@@ -278,7 +278,7 @@ html:has(.nav_opened) {
 .button_theme_transparent:hover {
   background-color: var(--clr-transparent);
   color: var(--clr-text-primary);
-  outline: 1px solid var(--clr-text-primary);
+  border: 1px solid var(--clr-text-primary);
 }
 
 .button_theme_accent {
@@ -305,6 +305,15 @@ html:has(.nav_opened) {
 
 .rate-tablist__button:active {
     transform: scale(0.95);
+}
+
+.fixed-button {
+  padding: 15px 0;
+  position: fixed;
+  max-width: 164px;
+  bottom: 32px;
+  right: 32px;
+  z-index: 1;
 }
 
 .control-buttons {
@@ -1339,10 +1348,8 @@ from {opacity: 0;} to {opacity: 1;}
 }
 
 .process__tabpanel:first-of-type .step:nth-child(1) .step__content::before {
-  bottom: 32px;
-  right: -64px;
-  width: 297px;
-  height: 231px;
+  background-size: 35%;
+  background-position: bottom 25px right;
   background-image: url(./images/step-one-icon.png);
 }
 
@@ -1365,7 +1372,7 @@ from {opacity: 0;} to {opacity: 1;}
 }
 
 .process__tabpanel:first-of-type .step:nth-child(5) .step__content::before {
-  background-size: 40%;
+  background-size: 42%;
   background-position: bottom right;
   background-image: url(./images/step-five-icon.png);
 }
@@ -1377,10 +1384,8 @@ from {opacity: 0;} to {opacity: 1;}
 }
 
 .process__tabpanel:last-of-type .step:nth-child(3) .step__content::before {
-  bottom: 0;
-  right: 0;
-  width: 351px;
-  height: 162px;
+  background-size: 50%;
+  background-position: bottom 14px right;
   background-image: url(./images/step-eight-icon.png);
 }
 
@@ -1827,7 +1832,8 @@ from {opacity: 0;} to {opacity: 1;}
 .price__tabpanel-title {
   margin: 0 0 28px;
   text-align: left;
-  letter-spacing: 3px;
+  letter-spacing: 0.44px;
+  font-variant-numeric: lining-nums proportional-nums;
 }
 
 .price__tabpanel-content {
