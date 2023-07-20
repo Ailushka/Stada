@@ -881,6 +881,14 @@ from {opacity: 0;} to {opacity: 1;}
   .user::before {
     background-size: 25%;
   }
+  .user_type_finalize::before,
+  .user_type_change::before {
+    width: 100%;
+  }
+  .user_type_upgrade::before,
+  .user_type_optimize::before {
+    background-size: 20%;
+  }
 }
 
 /* Requests */
@@ -1554,7 +1562,7 @@ from {opacity: 0;} to {opacity: 1;}
   }
   .process__tabpanel:last-of-type .step:nth-child(3)::before {
     background-image: url(./images/step-eight-icon.png);
-    bottom: 40px;
+    bottom: 60px;
   }
   .tags {
     gap: 4px;
