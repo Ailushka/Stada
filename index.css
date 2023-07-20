@@ -261,8 +261,10 @@ html:has(.nav_opened) {
   color: var(--clr-white);
 }
 
-.button_type_main:hover {
-  background-color: var(--clr-hover-main);
+@media (hover: hover) {
+  .button_type_main:hover {
+    background-color: var(--clr-hover-main);
+  }
 }
 
 .button_theme_light {
