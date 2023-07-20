@@ -370,9 +370,8 @@ function showContent(parent, content) {
   parent.querySelector(content).classList.add('tabpanel_active');
 
   const panelId = parent.querySelector(content).getAttribute("id");
-  console.log(sliderInstances);
   const sliderInstance = sliderInstances[panelId];
-  if (sliderInstance) {
+  if (sliderInstance && parent.classList.contains('process__content')) {
     parent.querySelector(content).classList.add('slider');
     sliderInstance.removeClickHandlers();
     initSlider(parent.querySelector(content));
