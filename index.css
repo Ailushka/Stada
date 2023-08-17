@@ -310,7 +310,7 @@
   height: 100%;
 }
 
-.advice:has(.advice__note) .advice__content {
+.advice_type_medicines .advice__content {
   padding-bottom: 20px;
 }
 
@@ -400,7 +400,7 @@
   line-height: normal;
 }
 
-.advice__content:has(.advice__note) .advice__recommendations {
+.advice_type_medicines .advice__recommendations {
   margin-bottom: 43px;
 }
 
@@ -666,7 +666,7 @@
   .diagnosis__warning:last-child {
     margin-bottom: 30px;
   }
-  .advice__content:has(.advice__note) .advice__recommendations {
+  .advice_type_medicines .advice__recommendations {
     margin-bottom: 24px;
   }
 }
