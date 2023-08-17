@@ -1,9 +1,31 @@
 @font-face {
-  font-family: 'Yandex Sans Text';
+  font-family: 'Nunito Sans';
   font-style:  normal;
   font-weight: 400;
   font-display: swap;
-  src: url("./fonts/YandexSansText-Regular.woff2") format("woff2"),
-       url("./fonts/YandexSansText-Regular.woff") format("woff");
+  src: url("./fonts/NunitoSans_7pt_SemiCondensed-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style:  normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./fonts/NunitoSans_7pt_SemiCondensed-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style:  normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./fonts/NunitoSans_7pt_SemiCondensed-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style:  normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("./fonts/NunitoSans_7pt_SemiCondensed-Black.ttf") format("truetype");
+}
